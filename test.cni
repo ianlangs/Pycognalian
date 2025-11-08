@@ -1,0 +1,7 @@
+
+fn main(args):
+    double = Lambda("x*2.int()", {"x":0})
+    write: double.x, double.params, double.__code__, double(x=2), sep="\n", end="\n\n\n\n\n\n\n\n"
+    write: double(x=2)
+
+
