@@ -1,9 +1,9 @@
 language:
-  name: cognalian
-  filetype: cni
-  version: 1.0.1
-  requeristments:
-    - signi: "No: reque"
-      "1": python
-    - signi: "No: optional?"
-      "1": true
+  "name": "cognalian"
+  "filetype": "cni"
+  "version": "1.0.1"
+  "requirements":
+    - "signi": "No: reque"
+      1: "python"
+    - "signi": "No: optional?"
+      1: true

@@ -1,9 +1,9 @@
-from ruamel.yaml import YAML
 import sys
 import vm.vm as vm
 from syntax.classtypes import *
 from syntax.buildins import *
 from utils import filesmanipule
+yaml = filesmanipule.yaml()
 def main():
     if len(sys.argv) == 3:
         if sys.argv[1].startswith("-"):
@@ -22,8 +22,13 @@ def main():
         if sys.argv[1] == "-info":
             with open("cognalian.yml", "r") as f:
                 print(f.read())
+        elif sys.argv[1] == "--version":
+            with open("cognalian.yml", "r") as f:
+                print((yaml.load(f))["language"]["version"])
         else:
             vm.execute(sys.argv[1])
+    else:
+        raise Exception("Usage: cog file or cog -info or cog file -r")
 
 if __name__ == "__main__":
     main()
