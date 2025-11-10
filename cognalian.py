@@ -3,6 +3,7 @@ import vm.vm as vm
 from syntax.classtypes import *
 from syntax.buildins import *
 from utils import filesmanipule
+from utils import *
 yaml = filesmanipule.yaml()
 def main():
     if len(sys.argv) == 3:
@@ -31,4 +32,6 @@ def main():
         raise Exception("Usage: cog file or cog -info or cog file -r")
 
 if __name__ == "__main__":
+    m:complex = ""
+    print(m)
     main()

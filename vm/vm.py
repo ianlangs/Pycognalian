@@ -3,6 +3,7 @@ from vm.verifiquer import init, pcow
 from utils import filesmanipule
 from syntax.buildins import *
 from syntax.classtypes import *
+import utils
 def translate(code):
     code = init.analize(code)
     code = pcow.analize(code)
@@ -12,7 +13,7 @@ def translate(code):
     code = sentences.fn(code)
     code = types.all(code)
 
-    code = "import sys\nsys.path.append('\\\\'.join(__file__.split('\\\\')[:-2]))\n" + code + "\nmain(List(sys.argv))"
+    code = "import sys, os\nsys.path.append(os.path.dirname(__file__))\n" + code + "\nmain(List(sys.argv))"
     return code
 
 def execute(file):

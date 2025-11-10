@@ -93,6 +93,8 @@ class CNum:
                 raise TypeError("can't create a cnumber of it real or imag part is a complex or imaginary")
             return cls(args[0], args[1])
 
+    def __str__(self):
+        return f"{self.real} {"+" if self.imag >= 0 else "-"} {abs(self.imag)}i"
     def __add__(self, other):
         other = self.convert(other)
         return CNum(self.real + other.real, self.imag + other.imag)
