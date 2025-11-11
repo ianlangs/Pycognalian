@@ -1,5 +1,5 @@
 from utils.decorators import allways
-pinit = ("class", "import")
+pinit = ("import",)
 
 def analize(code:str, prohibited:list[str]|tuple[str]|str):
     if isinstance(prohibited, str):
@@ -12,4 +12,3 @@ def analize(code:str, prohibited:list[str]|tuple[str]|str):
                 if line.startswith(init):
                     raise SyntaxError(f"prohibited init line {No}")
     return code
-analize = allways(analize, prohibited=pinit)

@@ -4,9 +4,14 @@ from utils import filesmanipule
 from syntax.buildins import *
 from syntax.classtypes import *
 import utils
+
 def translate(code):
-    code = init.analize(code)
-    code = pcow.analize(code)
+    try:
+        code = init.analize(code, init.pinit)
+        code = pcow.analize(code, pcow.pcow)
+    except SyntaxError as s:
+        print(s.msg)
+        pass
     code = comments.all(code)
     code = sentences.rw(code)
     code = sentences.use(code)

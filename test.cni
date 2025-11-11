@@ -22,3 +22,4 @@ fn main(args):
     i = 0.01
     for type in utils.types.__all__:
         write: type
+    import functools

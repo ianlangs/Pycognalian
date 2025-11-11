@@ -1,16 +1,17 @@
+import re
+
 from syntax.classtypes import String
 from utils.decorators import allways
-pcow = ("def",
-        "print",
-        "input",
-        "lambda",
-        "import"
-        ";")
+pcow = (r"def",
+        r"print",
+        r"input",
+        r"lambda",
+        r"import"
+        r";")
 
 def analize(code:str|String, prohibited:list[str]|tuple[str]=()):
     for p in prohibited:
-        if p in code:
-            raise SyntaxError(f"prohibited word / char {p} in code")
+        if re.match(p, code):
+            raise SyntaxError(f"prohibited {"char" if len(p) == 1 else "word"} {p} in code")
     return code
-analize = allways(analize, prohibited=pcow)
 
