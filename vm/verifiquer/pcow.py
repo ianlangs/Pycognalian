@@ -6,12 +6,12 @@ pcow = (r"def",
         r"print",
         r"input",
         r"lambda",
-        r"import"
+        r"import",
         r";")
 
 def analize(code:str|String, prohibited:list[str]|tuple[str]=()):
     for p in prohibited:
-        if re.match(p, code):
+        if p in code:
             raise SyntaxError(f"prohibited {"char" if len(p) == 1 else "word"} {p} in code")
     return code
 
