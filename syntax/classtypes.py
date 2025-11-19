@@ -3,8 +3,6 @@ import re
 import warnings
 from typing import Any
 
-from typing_extensions import overload
-
 
 class Enum:
     def __init__(self, **kwargs):

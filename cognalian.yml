@@ -1,9 +1,17 @@
 language:
   "name": "cognalian"
-  "filetype": "cni"
-  "version": "1.1"
+  "filetype": "*.cni"
+  "version": "1.2"
   "requirements":
     - "signi": "No: reque"
       1: "python"
+      2: "py-pip"
+      3: "py-pip-ramuel.yaml"
     - "signi": "No: optional?"
-      1: false
+      1: 
+        "optional": false
+      2: 
+        "optional": false
+        "can use other": true
+      3: 
+        "optional": false

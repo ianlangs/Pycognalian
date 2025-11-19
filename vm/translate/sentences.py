@@ -8,3 +8,5 @@ def use(code):
     return code
 def fn(code):
     return re.sub(r"fn", lambda m: f"def", code)
+def loop(code):
+    return re.sub(r"loop:", "while True:", code)

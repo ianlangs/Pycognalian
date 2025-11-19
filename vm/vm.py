@@ -12,6 +12,7 @@ def translate(code):
     code = sentences.rw(code)
     code = sentences.use(code)
     code = sentences.fn(code)
+    code = sentences.loop(code)
     code = types.all(code)
 
     code = "import sys, os\nsys.path.append(os.path.dirname(__file__))\n" + code + "\nmain(List(sys.argv))"

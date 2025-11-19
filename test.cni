@@ -19,7 +19,12 @@ fn main(args):
     k=regex.sub(r'l<^d \t>', 'w', k, flags=regex.get_flags("DM"))
     k=regex.sub(r'\t', 't', k, flags=regex.get_flags("DM"))
     write: k
-    i = 0.01
+    i = 9999
     for type in utils.types.__all__:
         write: type
-    import functools
+    loop:
+        if i < scientific(1, -1.001):
+            write: i
+            break
+        else:
+            i -= 0.1
