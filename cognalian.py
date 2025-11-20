@@ -34,6 +34,5 @@ def main():
         raise Exception("Usage: cog file or cog -info or cog file -r")
 
 if __name__ == "__main__":
-    m:complex = ""
     print(m)
     main()
