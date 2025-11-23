@@ -1,0 +1,8 @@
+dependencies {
+  python {
+    pip {
+      ruamel.yaml
+    }
+    compatible = <=3.14
+  }
+}

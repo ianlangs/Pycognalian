@@ -1,7 +1,4 @@
 import re
-
-def rw(code):
-    return re.sub(r"write: (.*)", lambda m: f"write({m.group(1)})", code)
 def use(code):
     code = re.sub(r"from: (.*) use: (.*)", lambda m: f"from {m.group(1)} import {m.group(2)})", code)
     code = re.sub(r"use: (.*)", lambda m: f"import {m.group(1)}", code)

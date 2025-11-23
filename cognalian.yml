@@ -1,7 +1,7 @@
 "language":
   "name": "cognalian"
   "filetype": "*.cni"
-  "version": "1.3"
+  "version": "1.4"
   "requirements":
     - "signi": "No: reque"
       1: "python"
