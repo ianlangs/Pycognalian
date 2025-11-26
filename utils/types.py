@@ -1,8 +1,9 @@
-from syntax.classtypes import List, Bool, Enum, String, Tuple, Dict, Number, CNum, regex, Lambda
+from syntax.classtypes import *
 __all__ = (
 funcType := (lambda x:x).__class__,
 LambdaType := Lambda,
 regexType := regex,
+numberexType := nre,
 regexcompileType := regexType.regexCompile(r"\d").__class__,
 regexcompiletoType := regexType["",""].__class__,
 dictType := Dict,
@@ -13,6 +14,7 @@ NumberType := Number,
 ComplexNumberType := CNum,
 boolType := Bool,
 enumType := Enum,
+structedType := Struct
 )
 if __name__ == "__main__":
     for i in __all__:print(i)

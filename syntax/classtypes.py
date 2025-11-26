@@ -329,21 +329,25 @@ import microlangs.regex as _regex
 class regex(_regex.regex):
     class regexCompile(_regex.regex.regexCompile):pass
     class regexCompileTo(_regex.regex.regexCompileTo):pass
-
+import microlangs.numberrex as _nre
+class nre(_nre.nre):
+    pass
 class Lambda:
-    def __init__(self, code:String, params:Dict[str, Any]):
+    def __init__(self, code:String, params:dict|tuple|list|Dict|Tuple|List):
         self.__code__ = code
-        self.params = params
+        if isinstance(params, (Dict, dict)):
+            self.params =  params
+        elif isinstance(params, (List, list, Tuple, tuple)):
+            self.params = {p:None for p in params}
         self.__dict__.update(self.params)
     def __str__(self):
-        return f"{self.__code__}, {self.params}"
+        return f"<{self.params} -> {self.__code__}>"
     def __call__(self, **kwargs):
         if set(kwargs.keys()) <= set(self.params.keys()):
             try:
                 return eval(self.__code__, globals(), self.params | kwargs)
             except Exception as e:
                 warnings.warn(f"Error executing Lambda: {e}", UserWarning)
-                return None
         else:
             warnings.warn("The function did not execute because the arguments did not match", UserWarning)
 
