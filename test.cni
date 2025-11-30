@@ -1,34 +1,33 @@
 
-fn main(args):
-    use: time
-    double = Lambda("x*2.int()", {"x":0})
-    write(double.x, double.params, double.__code__, double(x=2), sep="\n", end="\n\n\n\n\n\n\n\n")
-    write(double(x=2))
-    name = readInput("what's your name: ")
-    surname = readInput("what's your surname: ")
-    text = readInput("introduce a text with '--yourname': ")
-    rnames = regex.sub("--%s" % name, surname, text)
-    write(rnames)
+use: time
+double = Lambda("x*2.int()", {"x":0})
+write(double.x, double.params, double.__code__, double(x=2), sep="\n", end="\n\n\n\n\n\n\n\n")
+write(double(x=2))
+name = readInput("what's your name: ")
+surname = readInput("what's your surname: ")
+text = readInput("introduce a text with '--yourname': ")
+rnames = regex.sub("--%s" % name, surname, text)
+write(rnames)
 
-    multiply = Lambda("x*y", {"x":0, "y":0})
-    divide = Lambda("x/y", {"x":0, "y":1})
-    write(divide, multiply)
-    write(divide(x=237895*1623, y=1623))
-    write(multiply(x=237895, y=1623))
-    k=regex.sub(r'\d', 'd', readInput('insert a text: '), flags=regex.get_flags("DM"))
-    k=regex.sub(r'l<^d \t>', 'w', k, flags=regex.get_flags("DM"))
-    k=regex.sub(r'\t', 't', k, flags=regex.get_flags("DM"))
-    write(k)
-    i = 9999
-    for type in utils.types.__all__:
-        write(type)
-    struct person(name, lastname)
-    write(person("miguel", "torres"))
-    if false:
-        loop:
-            if i < 1e-1.00000008:
-                write(i)
-                i += 1
-            else:
-                write(i)
-                i -= 1
+multiply = Lambda("x*y", {"x":0, "y":0})
+divide = Lambda("x/y", {"x":0, "y":1})
+write(divide, multiply)
+write(divide(x=237895*1623, y=1623))
+write(multiply(x=237895, y=1623))
+k = regex.sub(r'\d', 'd', readInput('insert a text: '), flags=regex.get_flags("DM"))
+k = regex.sub(r'l<^d \t>', 'w', k, flags=regex.get_flags("DM"))
+k = regex.sub(r'\t', 't', k, flags=regex.get_flags("DM"))
+write(k)
+i = 9999
+for type in utils.types.__all__:
+    write(type)
+struct person(name, lastname)
+write(person("miguel", "torres"))
+fn cn():
+    loop:
+        if i < 1e-1.00000008:
+            write(i)
+            i += 1
+        else:
+            write(i)
+            i -= 1
