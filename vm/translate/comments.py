@@ -1,7 +1,7 @@
 import re
 
 def onword(code):
-    return re.sub("//[^\s]*", "", code)
+    return re.sub(r"//[^\s]*", "", code)
 def online(code):
     return re.sub(r"#.*", "", code)
 def multiline(code):

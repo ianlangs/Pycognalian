@@ -1,6 +1,5 @@
 import sys
 from vm.verifiquer.pcow import *
-from vm.verifiquer.init import *
 import vm.vm as vm
 from syntax.classtypes import *
 from syntax.buildins import *
