@@ -6,7 +6,9 @@ from syntax.classtypes import *
 from syntax.buildins import *
 from utils import filesmanipule
 from utils import *
+
 yaml = filesmanipule.yaml()
+
 def main():
     if len(sys.argv) == 4:
         if sys.argv[2] == "-p":
@@ -17,6 +19,8 @@ def main():
         if sys.argv[2].startswith("-"):
             if sys.argv[2] == "-r":
                 print(vm.returned(sys.argv[1]))
+            elif sys.argv[2] == "-cb":
+                vm.cb(sys.argv[1])
             else:
                 raise Exception("mode are invalid")
         else:
