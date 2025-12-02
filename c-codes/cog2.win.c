@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
     if (argc >= 2) {
         cmd[0] = '\0';
 
-        strcat(cmd, "python cog2.py"); // comando base
+        strcat(cmd, "python C:\\Pycognalian\\cog2.py"); // comando base
 
         // agregamos todos los argumentos separados por espacio
         for (int i = 1; i < argc; i++) {
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
         subprocess_run(cmd);
 
     } else {
-        subprocess_run("python cog2.py a a a a a a a a a"); // cantidad de args incorrecta
+        subprocess_run("python C:\\Pycognalian\\cog2.py a a a a a a a a a"); // cantidad de args incorrecta
     }
 
     return 0;
